@@ -27,10 +27,9 @@ module.exports = function(grunt, options){
     },
     styles: {
       expand: true,
-      dot: true,
-      cwd: yeoman.app + '/css',
-      dest: '.tmp/css/',
-      src: '{,*/}*.css'
+      flatten: true,
+      dest: yeoman.dist + '/css/',
+      src: '.tmp/css/*.css'
     }
   }
 };
