@@ -1,5 +1,5 @@
 module.exports = function(grunt, options){
-  var yeoman = require('yeoman');
+  var yeoman = options.yeoman;
   return {
 	  dist: {
 	    files: [{

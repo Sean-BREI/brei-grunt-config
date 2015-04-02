@@ -4,13 +4,13 @@ module.exports = function(grunt, options){
   var mountFolder = function (connect, dir) {
       return connect.static(require('path').resolve(dir));
   };
-  var yeoman = require('./yeoman.js');
+  var yeoman = options.yeoman;
 
   return {
     options: {
-    port: 9000,
-    // change this to '0.0.0.0' to access the server from outside
-    hostname: 'localhost'
+        port: options.connect.port,
+        // change this to '0.0.0.0' to access the server from outside
+        hostname: 'localhost'
     },
     livereload: {
         options: {

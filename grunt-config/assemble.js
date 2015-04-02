@@ -1,5 +1,5 @@
 module.exports = function(grunt, options){
-  var yeoman = require('yeoman');
+  var yeoman = options.yeoman;
   return {
     options: {
       collections: [{
@@ -14,8 +14,10 @@ module.exports = function(grunt, options){
       layout: 'default.hbs',
       layoutdir: yeoman.app + '/assemble/layouts/',
       helpers: yeoman.app + '/assemble/helpers/**/*.js',
-      partials: [yeoman.app + '/assemble/partials/{,*/}*.hbs',
-        yeoman.app + '/assemble/modules/**/*'
+      partials: [
+        yeoman.app + '/assemble/partials/{,*/}*.hbs',
+        yeoman.app + '/assemble/modules/**/*',
+        yeoman.app + '/assemble/includes/{,*/}*.hbs'
       ],
       data: yeoman.app + '/assemble/fixtures/{,*/}*.json'
     },

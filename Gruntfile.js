@@ -4,6 +4,14 @@
 var options = {
     config : {
         src: 'grunt-config/*.js'
+    },
+    yeoman: {
+      app: 'app',
+      dist: 'dist',
+      deploy: '../../deploy'
+    },
+    connect: {
+        port: 9000
     }
 };
 
@@ -32,6 +40,13 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-execute');
 
     grunt.initConfig(configs);
+
+    // configurable paths
+    var yeomanConfig = {
+        app: 'app',
+        dist: 'dist',
+        deploy: '../../deploy'
+    };
 
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {
