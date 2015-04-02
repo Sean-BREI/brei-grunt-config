@@ -5,9 +5,9 @@ module.exports = function(grunt, options){
       files: [
         yeoman.app + '/sass/**/*.{scss,sass}',
         yeoman.app + '/img/**/*.png',
-        '!<%= yeoman.app %>/sass/modules/_assemble-modules.scss',
-        '!<%= yeoman.app %>/sass/partials/_assemble-partials.scss',
-        '!<%= yeoman.app %>/sass/partials/_assemble-templates.scss'
+        '!' + yeoman.app + '/sass/modules/_assemble-modules.scss',
+        '!' + yeoman.app + '/sass/partials/_assemble-partials.scss',
+        '!' + yeoman.app + '/sass/partials/_assemble-templates.scss'
       ],
       tasks: ['compass:server', 'autoprefixer']
     },
@@ -27,7 +27,7 @@ module.exports = function(grunt, options){
         yeoman.app + '/*.html',
         yeoman.app + '/modules/**/*.html',
         '.tmp/css/**/*.css',
-        '{.tmp,<%= yeoman.app %>}/js/**/*.js',
+        '{.tmp,' + yeoman.app + '}/js/**/*.js',
         yeoman.app + '/img/**/*.{png,jpg,jpeg,gif,webp,svg}'
       ]
     },

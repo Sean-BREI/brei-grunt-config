@@ -20,8 +20,8 @@ module.exports = function(grunt, options){
       }, {
         expand: true,
         dot: true,
-        cwd: '<%= yeoman.app %>/fonts',
-        dest: '<%= yeoman.dist %>/fonts',
+        cwd: yeoman.app + '/fonts',
+        dest: yeoman.dist + '/fonts',
         src: ['*']
       }]
     },
