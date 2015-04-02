@@ -7,13 +7,22 @@ module.exports = function(grunt, options){
         dot: true,
         cwd: yeoman.app,
         dest: yeoman.dist,
-        src: ['*.{ico,png,txt}',
+        src: [
+          '*.{ico,png,txt}',
           '.htaccess',
           'img/{,*/}*.{webp,gif}',
-          'css/{,*/}*.{jpg,gif,png,webp}',
-          'css/fonts/*',
+          'css/{,*/}*.{jpg,gif,png,webp}', // if the css is generated into the app directory
+          'css/fonts/*', // if the css is generated into the app directory
+          '.tmp/concat/css/**/*.{jpg,gif,png,webp}', // if the css is generated into the .tmp directory
+          '.tmp/concat/css/**/*.{css}', // if the css is generated into the .tmp directory
           'modules/*'
         ]
+      }, {
+        expand: true,
+        dot: true,
+        cwd: '<%= yeoman.app %>/fonts',
+        dest: '<%= yeoman.dist %>/fonts',
+        src: ['*']
       }]
     },
     deploy: {
