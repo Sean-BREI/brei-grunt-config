@@ -33,13 +33,6 @@ module.exports = function (grunt) {
 
     grunt.initConfig(configs);
 
-    // configurable paths
-    var yeomanConfig = {
-        app: 'app',
-        dist: 'dist',
-        deploy: '../../deploy'
-    };
-
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {
             return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
