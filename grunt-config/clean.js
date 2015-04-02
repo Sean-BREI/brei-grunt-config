@@ -1,21 +1,22 @@
 module.exports = function(grunt, options){
+  var yeoman = require('yeoman');
   return {
     dist: {
       files: [{
         dot: true,
-        src: ['.tmp', '<%= yeoman.dist %>/*', '!<%= yeoman.dist %>/.git*']
+        src: ['.tmp', yeoman.dist + '/*', '!' + yeoman.dist + '/.git*']
       }]
     },
     deploy: {
       options: {
         force: true
       },
-      src: ['<%= yeoman.deploy %>']
+      src: [yeoman.deploy]
     },
     server: '.tmp',
     assemble: {
-      src: ['<%= yeoman.app %>/*.html',
-        '<%= yeoman.app %>/modules/*.html'
+      src: [yeoman.app + '/*.html',
+        yeoman.app + '/modules/*.html'
       ]
     }
   }

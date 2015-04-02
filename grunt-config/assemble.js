@@ -1,4 +1,5 @@
 module.exports = function(grunt, options){
+  var yeoman = require('yeoman');
   return {
     options: {
       collections: [{
@@ -11,27 +12,27 @@ module.exports = function(grunt, options){
         sortorder: 'ascending'
       }],
       layout: 'default.hbs',
-      layoutdir: '<%= yeoman.app %>/assemble/layouts/',
-      helpers: '<%= yeoman.app %>/assemble/helpers/**/*.js',
-      partials: ['<%= yeoman.app %>/assemble/partials/{,*/}*.hbs',
-        '<%= yeoman.app %>/assemble/modules/**/*'
+      layoutdir: yeoman.app + '/assemble/layouts/',
+      helpers: yeoman.app + '/assemble/helpers/**/*.js',
+      partials: [yeoman.app + '/assemble/partials/{,*/}*.hbs',
+        yeoman.app + '/assemble/modules/**/*'
       ],
-      data: '<%= yeoman.app %>/assemble/fixtures/{,*/}*.json'
+      data: yeoman.app + '/assemble/fixtures/{,*/}*.json'
     },
     templates: {
       files: [{
-        cwd: '<%= yeoman.app %>/assemble/modules/',
-        dest: '<%= yeoman.app %>/modules/',
+        cwd: yeoman.app + '/assemble/modules/',
+        dest: yeoman.app + '/modules/',
         expand: true,
         src: ['**/*.hbs']
       }, {
-        cwd: '<%= yeoman.app %>/assemble/',
-        dest: '<%= yeoman.app %>/',
+        cwd: yeoman.app + '/assemble/',
+        dest: yeoman.app + '/',
         expand: true,
         src: ['*.hbs', '!index.hbs']
       }, {
-        cwd: '<%= yeoman.app %>/assemble/',
-        dest: '<%= yeoman.app %>/',
+        cwd: yeoman.app + '/assemble/',
+        dest: yeoman.app + '/',
         expand: true,
         src: ['index.hbs']
       }]

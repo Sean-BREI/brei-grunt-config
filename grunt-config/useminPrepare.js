@@ -1,8 +1,9 @@
 module.exports = function(grunt, options){
+  var yeoman = require(yeoman);
   return {
 	  options: {
-	    dest: '<%= yeoman.dist %>'
+	    dest: yeoman.dist
 	  },
-	  html: '<%= yeoman.app %>/index.html'
+	  html: yeoman.app + '/index.html'
 	}
 };
