@@ -2,8 +2,12 @@ module.exports = function(grunt, options){
   var yeoman = options.yeoman;
   return {
     compass: {
-      files: [yeoman.app + '/sass/**/*.{scss,sass}',
-        yeoman.app + '/img/**/*.png'
+      files: [
+        yeoman.app + '/sass/**/*.{scss,sass}',
+        yeoman.app + '/img/**/*.png',
+        '!<%= yeoman.app %>/sass/modules/_assemble-modules.scss',
+        '!<%= yeoman.app %>/sass/partials/_assemble-partials.scss',
+        '!<%= yeoman.app %>/sass/partials/_assemble-templates.scss'
       ],
       tasks: ['compass:server', 'autoprefixer']
     },
@@ -19,15 +23,17 @@ module.exports = function(grunt, options){
       options: {
         livereload: 35729
       },
-      files: [yeoman.app + '/*.html',
+      files: [
+        yeoman.app + '/*.html',
         yeoman.app + '/modules/**/*.html',
         '.tmp/css/**/*.css',
-        '{.tmpyeoman.app + ,}/js/**/*.js',
+        '{.tmp,<%= yeoman.app %>}/js/**/*.js',
         yeoman.app + '/img/**/*.{png,jpg,jpeg,gif,webp,svg}'
       ]
     },
     execute: {
-      files: [yeoman.app + '/assemble/modules/*.hbs',
+      files: [
+        yeoman.app + '/assemble/modules/*.hbs',
         yeoman.app + '/assemble/partials/*.hbs'
       ],
       tasks: ['execute:target']
