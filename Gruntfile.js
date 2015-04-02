@@ -8,7 +8,7 @@ var options = {
     yeoman: {
       app: 'app',
       dist: 'dist',
-      deploy: '../../deploy'
+      deploy: '../../web'
     },
     connect: {
         port: 9000
@@ -41,18 +41,10 @@ module.exports = function (grunt) {
 
     grunt.initConfig(configs);
 
-    // configurable paths
-    var yeomanConfig = {
-        app: 'app',
-        dist: 'dist',
-        deploy: '../../deploy'
-    };
-
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {
             return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
         }
-
         grunt.task.run([
             'clean:assemble',
             'assemble',
@@ -70,6 +62,8 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('build', [
+        'clean:assemble',
+        'assemble',
         'clean:dist',
         'useminPrepare',
         'compass:dist',
@@ -89,8 +83,6 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('default', [
-        'clean:assemble',
-        'assemble',
         'jshint',
         'build'
     ]);
