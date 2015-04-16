@@ -13,7 +13,7 @@ module.exports = function(grunt, options){
       httpGeneratedImagesPath: '/img/generated',
       httpFontsPath: '/sass/fonts',
       relativeAssets: false,
-      outputStyle: 'compact',
+      outputStyle: 'expanded',
       debugInfo: false
     },
     dist: {
@@ -25,7 +25,7 @@ module.exports = function(grunt, options){
     },
     server: {
       options: {
-        debugInfo: true
+        debugInfo: false
       }
     }
   }
