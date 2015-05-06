@@ -58,7 +58,6 @@ module.exports = function (grunt) {
             'assemble',
             'clean:server',
             'concurrent:server',
-            'autoprefixer',
             'connect:livereload',
             'open',
             'watch'
@@ -70,14 +69,16 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('build', [
+        'clean:assemble',
+        'assemble',
         'clean:dist',
         'useminPrepare',
         'compass:dist',
-        'concurrent:dist',
         'autoprefixer',
         'concat',
         'cssmin',
         'uglify',
+        'concurrent:dist',
         'copy:dist',
         'usemin',
         'modernizr:dist'
