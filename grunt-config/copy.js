@@ -23,6 +23,12 @@ module.exports = function(grunt, options){
         cwd: yeoman.app + '/fonts',
         dest: yeoman.dist + '/fonts',
         src: ['*']
+      }, {
+        expand: true,
+        dot: true,
+        cwd: yeoman.app + 'sass/icons/fonts',
+        dest: yeoman.dist + '/fonts',
+        src: ['*']
       }]
     },
     deploy: {
