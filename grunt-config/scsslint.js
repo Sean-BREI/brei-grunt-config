@@ -1,11 +1,12 @@
-module.exports = function(grunt, options){
+module.exports = function (grunt, options) {
+  'use strict';
   var yeoman = options.yeoman;
   return {
     allFiles: [
-      'scss/**/*.scss',
+      yeoman.app + '/sass/**/*.scss',
     ],
     options: {
-      bundleExec: true,
+      bundleExec: false,
       config: '.scss-lint.yml',
       reporterOutput: 'scss-lint-report.xml',
       colorizeOutput: true
