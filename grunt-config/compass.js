@@ -7,11 +7,11 @@ module.exports = function(grunt, options){
       generatedImagesDir: '.tmp/img/generated',
       imagesDir: yeoman.app + '/img',
       javascriptsDir: yeoman.app + '/js',
-      fontsDir: yeoman.app + '/sass/fonts',
+      fontsDir: yeoman.app + '/sass/icons/fonts',
       importPath: yeoman.app + '/bower_components',
       httpImagesPath: '/img',
       httpGeneratedImagesPath: '/img/generated',
-      httpFontsPath: '/sass/fonts',
+      httpFontsPath: '/sass/icons/fonts',
       relativeAssets: false,
       outputStyle: 'expanded',
       debugInfo: false
