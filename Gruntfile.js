@@ -19,6 +19,8 @@ var options = {
 // 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
+	'use strict';
+	
 	var configs = require('load-grunt-configs')(grunt, options);
 
 	// build a custom version of modernizr
