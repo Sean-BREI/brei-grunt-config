@@ -54,8 +54,8 @@ module.exports = function (grunt) {
 	});
 
 	grunt.registerTask('check', [
-		'jshint',
-		'scsslint'
+		'jshint'
+		// 'scsslint'
 	]);
 
 	grunt.registerTask('build', [
