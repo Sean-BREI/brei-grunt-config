@@ -20,7 +20,7 @@ var options = {
 
 module.exports = function (grunt) {
 	'use strict';
-	
+
 	var configs = require('load-grunt-configs')(grunt, options);
 
 	// build a custom version of modernizr
@@ -34,6 +34,9 @@ module.exports = function (grunt) {
 
 	// Assemble!
 	grunt.loadNpmTasks('assemble');
+
+	// SCSS Lint
+	grunt.loadNpmTasks('grunt-scss-lint');
 
 	// For executing the updateScss.js script in app/assemble/helpers
 	grunt.loadNpmTasks('grunt-execute');
@@ -56,8 +59,8 @@ module.exports = function (grunt) {
 	});
 
 	grunt.registerTask('check', [
-		'jshint'
-		// 'scsslint'
+		'jshint',
+		'scsslint'
 	]);
 
 	grunt.registerTask('build', [
