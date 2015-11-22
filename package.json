@@ -1,19 +1,19 @@
 {
-  "name": "brei-grunt-config",
-  "version": "1.0.0",
-  "description": "BREI Abstracted Grunt Tasks",
-  "main": "Gruntfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BarkleyREI/brei-grunt-config.git"
-  },
-  "author": "Joseph Dillon",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/BarkleyREI/brei-grunt-config/issues"
-  },
-  "homepage": "https://github.com/BarkleyREI/brei-grunt-config"
+	"name": "brei-grunt-config",
+	"version": "1.0.0",
+	"description": "BREI Abstracted Grunt Tasks",
+	"main": "Gruntfile.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/BarkleyREI/brei-grunt-config.git"
+	},
+	"author": "Joseph Dillon",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/BarkleyREI/brei-grunt-config/issues"
+	},
+	"homepage": "https://github.com/BarkleyREI/brei-grunt-config"
 }
