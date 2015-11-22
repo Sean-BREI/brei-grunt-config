@@ -20,7 +20,7 @@ var options = {
 
 module.exports = function (grunt) {
 	'use strict';
-	
+
 	var configs = require('load-grunt-configs')(grunt, options);
 
 	// build a custom version of modernizr
@@ -59,8 +59,8 @@ module.exports = function (grunt) {
 	});
 
 	grunt.registerTask('check', [
-		'jshint'
-		// 'scsslint'
+		'jshint',
+		'scsslint'
 	]);
 
 	grunt.registerTask('build', [
