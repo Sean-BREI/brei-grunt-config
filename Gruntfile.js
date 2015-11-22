@@ -33,6 +33,9 @@ module.exports = function (grunt) {
 	// Assemble!
 	grunt.loadNpmTasks('assemble');
 
+	// SCSS Lint
+	grunt.loadNpmTasks('grunt-scss-lint');
+
 	// For executing the updateScss.js script in app/assemble/helpers
 	grunt.loadNpmTasks('grunt-execute');
 
