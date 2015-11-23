@@ -8,8 +8,8 @@ module.exports = function(grunt, options){
       yeoman.app + '/js/{,*/}*.js',
       '!' + yeoman.app + '/js/plugins.js',
       '!' + yeoman.app + '/js/plugins/*',
-      '!' + yeoman.app + '/js/vendor/*',
-      'test/spec/{,*/}*.js'
+      '!' + yeoman.app + '/js/vendor/*'
+      // 'test/spec/{,*/}*.js'
     ]
   }
 };
