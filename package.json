@@ -1,19 +1,42 @@
 {
-  "name": "brei-grunt-config",
-  "version": "1.0.0",
-  "description": "BREI Abstracted Grunt Tasks",
-  "main": "Gruntfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BarkleyREI/brei-grunt-config.git"
-  },
-  "author": "Joseph Dillon",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/BarkleyREI/brei-grunt-config/issues"
-  },
-  "homepage": "https://github.com/BarkleyREI/brei-grunt-config"
+	"name": "brei-grunt-config",
+	"version": "1.0.0",
+	"description": "BREI Abstracted Grunt Tasks",
+	"main": "Gruntfile.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/BarkleyREI/brei-grunt-config.git"
+	},
+	"author": "Joseph Dillon",
+	"contributors": [
+		{
+			"name": "Ian Moffitt",
+			"email": "nessthehero@gmail.com",
+			"url": "https://github.com/nessthehero"
+		},
+		{
+			"name": "Ryan Sprake",
+			"url": "https://github.com/eightdotthree"
+		},
+		{
+			"name": "Joseph Dillon",
+			"url": "https://github.com/jdillon522"
+		},
+		{
+			"name": "Sean Stacho",
+			"url": "https://github.com/Sean-BREI"
+		},
+		{
+			"name": "Sarah Harissis",
+			"url": "https://github.com/sharissis"
+		}
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/BarkleyREI/brei-grunt-config/issues"
+	},
+	"homepage": "https://github.com/BarkleyREI/brei-grunt-config"
 }
