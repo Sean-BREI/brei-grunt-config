@@ -14,7 +14,8 @@ module.exports = function(grunt, options){
 			httpFontsPath: '/sass/icons/fonts',
 			relativeAssets: false,
 			outputStyle: 'expanded',
-			debugInfo: false
+			debugInfo: false,
+			quiet: true
 		},
 		dist: {
 			options: {
