@@ -8,7 +8,7 @@ module.exports = function (grunt, options) {
 		},
 		app: {
 			files: {
-				'app/js/angular/min-safe/app.js': [yeoman.app + '/js/angular/*.js'],
+				'app/js/angular/min-safe/app.js': [yeoman.app + '/js/angular/app.js'],
 				'app/js/angular/min-safe/controllers.js': [yeoman.app + '/js/angular/controllers/*.js'],
 				'app/js/angular/min-safe/directives.js': [yeoman.app + '/js/angular/directives/*.js'],
 				'app/js/angular/min-safe/filters.js': [yeoman.app + '/js/angular/filters/*.js'],
