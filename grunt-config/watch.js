@@ -20,7 +20,7 @@ module.exports = function(grunt, options){
 				yeoman.app + '/assemble/**/*.hbs',
 				yeoman.app + '/assemble/**/*.json'
 			],
-			tasks: ['clean:assemble', 'assemble']
+			tasks: ['clean:assemble', 'assemble', 'execute:target', 'compass:server']
 		},
 		livereload: {
 			options: {
