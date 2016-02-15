@@ -88,5 +88,13 @@ module.exports = function (grunt) {
 		'check',
 		'build'
 	]);
+	
+	grunt.registerTask('execute-sync', function (s) {
+		var done = this.async();
+
+		grunt.task.run('execute:target');
+
+		done();
+	});
 
 };
