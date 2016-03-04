@@ -56,6 +56,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('check', [
 		'jshint',
+		'execute-sync',
 		'scsslint'
 	]);
 
