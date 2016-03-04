@@ -1,4 +1,4 @@
-module.exports = function(grunt, options){
+module.exports = function(grunt, options) {
 	var yeoman = options.yeoman;
 	return {
 		compass: {
@@ -9,37 +9,63 @@ module.exports = function(grunt, options){
 				'!' + yeoman.app + '/sass/partials/_assemble-partials.scss',
 				'!' + yeoman.app + '/sass/templates/_assemble-templates.scss'
 			],
-			tasks: ['compass:server', 'autoprefixer']
+			tasks: ['compass:server', 'autoprefixer'],
+			options: {
+				debounceDelay: 500,
+			}
 		},
 		styles: {
 			files: [yeoman.app + '/css/**/*.css'],
-			tasks: ['copy:styles', 'autoprefixer']
+			tasks: ['copy:styles', 'autoprefixer'],
+			options: {
+				debounceDelay: 500,
+			}
 		},
 		assemble: {
 			files: [
 				yeoman.app + '/assemble/**/*.hbs',
 				yeoman.app + '/assemble/**/*.json'
 			],
-			tasks: ['clean:assemble', 'assemble', 'execute:target', 'compass:server']
-		},
-		livereload: {
+			tasks: [/*'clean:assemble', */'assemble', 'compass:server'],
 			options: {
-				livereload: 35729
-			},
-			files: [
-				yeoman.app + '/*.html',
-				yeoman.app + '/modules/**/*.html',
-				'.tmp/css/**/*.css',
-				'{.tmp,' + yeoman.app + '}/js/**/*.js',
-				yeoman.app + '/img/**/*.{png,jpg,jpeg,gif,webp,svg}'
-			]
+				debounceDelay: 500,
+				event: ['changed']
+			}
 		},
+		fixtures: {
+			files: [
+				yeoman.app + '/assemble/**/*.json'
+			],
+			tasks: [/*'clean:assemble', */'assemble', 'compass:server'],
+			options: {
+				debounceDelay: 500,
+				event: ['added', 'deleted']
+			}
+		},
+		// livereload: {
+		// 	options: {
+		// 		livereload: true,
+		// 		debounceDelay: 500,
+		// 	},
+		// 	files: [
+		// 		yeoman.app + '/*.html',
+		// 		yeoman.app + '/modules/**/*.html',
+		// 		'.tmp/css/**/*.css',
+		// 		'{.tmp,' + yeoman.app + '}/js/**/*.js',
+		// 		yeoman.app + '/img/**/*.{png,jpg,jpeg,gif,webp,svg}'
+		// 	]
+		// },
 		execute: {
 			files: [
 				yeoman.app + '/assemble/modules/*.hbs',
-				yeoman.app + '/assemble/partials/*.hbs'
+				yeoman.app + '/assemble/partials/*.hbs',
+				yeoman.app + '/assemble/templates/*.hbs'
 			],
-			tasks: ['execute:target']
+			tasks: ['clean:assemble', 'assemble', 'execute-sync'],
+			options: {
+				debounceDelay: 500,
+				event: ['added', 'deleted']
+			}
 		}
 	};
 };
