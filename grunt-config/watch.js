@@ -26,7 +26,7 @@ module.exports = function(grunt, options) {
 				yeoman.app + '/assemble/**/*.hbs',
 				yeoman.app + '/assemble/**/*.json'
 			],
-			tasks: [/*'clean:assemble', */'assemble', 'compass:server'],
+			tasks: ['assemble', 'compass:server'],
 			options: {
 				debounceDelay: 500,
 				event: ['changed']
@@ -36,30 +36,17 @@ module.exports = function(grunt, options) {
 			files: [
 				yeoman.app + '/assemble/**/*.json'
 			],
-			tasks: [/*'clean:assemble', */'assemble', 'compass:server'],
+			tasks: ['assemble', 'compass:server'],
 			options: {
 				debounceDelay: 500,
 				event: ['added', 'deleted']
 			}
 		},
-		// livereload: {
-		// 	options: {
-		// 		livereload: true,
-		// 		debounceDelay: 500,
-		// 	},
-		// 	files: [
-		// 		yeoman.app + '/*.html',
-		// 		yeoman.app + '/modules/**/*.html',
-		// 		'.tmp/css/**/*.css',
-		// 		'{.tmp,' + yeoman.app + '}/js/**/*.js',
-		// 		yeoman.app + '/img/**/*.{png,jpg,jpeg,gif,webp,svg}'
-		// 	]
-		// },
 		execute: {
 			files: [
 				yeoman.app + '/assemble/modules/*.hbs',
 				yeoman.app + '/assemble/partials/*.hbs',
-				yeoman.app + '/assemble/templates/*.hbs'
+				yeoman.app + '/assemble/*.hbs'
 			],
 			tasks: ['clean:assemble', 'assemble', 'execute-sync'],
 			options: {
