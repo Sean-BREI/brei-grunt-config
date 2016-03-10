@@ -6,9 +6,6 @@ var options = {
 		app: 'app',
 		dist: 'dist',
 		deploy: '<%= deployDirectory %>'
-	},
-	connect: {
-		port: 9000
 	}
 };
 
@@ -52,14 +49,14 @@ module.exports = function (grunt) {
 			'assemble',
 			'clean:server',
 			'concurrent:server',
-			'connect:livereload',
-			'open',
+			'browserSync',
 			'watch'
 		]);
 	});
 
 	grunt.registerTask('check', [
 		'jshint',
+		'execute-sync',
 		'scsslint'
 	]);
 
@@ -88,7 +85,7 @@ module.exports = function (grunt) {
 		'check',
 		'build'
 	]);
-	
+
 	grunt.registerTask('execute-sync', function (s) {
 		var done = this.async();
 

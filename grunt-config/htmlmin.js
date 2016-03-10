@@ -2,7 +2,9 @@ module.exports = function(grunt, options){
 	var yeoman = options.yeoman;
 	return {
 		dist: {
-			options: {},
+			options: {
+				keepClosingSlash: true,
+			},
 			files: [{
 				expand: true,
 				cwd: yeoman.app,

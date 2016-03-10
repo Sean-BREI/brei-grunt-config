@@ -9,7 +9,8 @@ module.exports = function (grunt, options) {
 			bundleExec: false,
 			config: '.scss-lint.yml',
 			reporterOutput: 'scss-lint-report.xml',
-			colorizeOutput: true
+			colorizeOutput: true,
+			exclude: yeoman.app + '/sass/plugins/*.scss'
 		},
 	};
 };
