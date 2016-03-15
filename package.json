@@ -1,6 +1,6 @@
 {
 	"name": "brei-grunt-config",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "BREI Abstracted Grunt Tasks",
 	"main": "Gruntfile.js",
 	"scripts": {
