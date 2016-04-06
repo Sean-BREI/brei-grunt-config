@@ -29,12 +29,6 @@ module.exports = function (grunt) {
 	// Show elapsed time after tasks run
 	require('time-grunt')(grunt);
 
-	// Assemble!
-	grunt.loadNpmTasks('assemble');
-
-	// SCSS Lint
-	grunt.loadNpmTasks('grunt-scss-lint');
-
 	// For executing the updateScss.js script in app/assemble/helpers
 	grunt.loadNpmTasks('grunt-execute');
 
@@ -93,5 +87,61 @@ module.exports = function (grunt) {
 
 		done();
 	});
+
+	grunt.registerTask('debug', function (s) {
+
+        var done = this.async();
+
+        nconf.file({ file: './brei-config.json' });
+        nconf.load();
+
+        if (s === 'on') {
+            nconf.set('debug', 'true');
+            nconf.save(function (err) {
+                fs.readFile('./brei-config.json', function (err, data) {
+                    console.dir(JSON.parse(data.toString()));
+                });
+                if (err) {
+                    console.log('error! ' + err.message);
+                    console.error(err.message);
+                    done();
+                    return;
+                }
+                console.log('1 Configuration saved successfully.');
+                done();
+            });
+        } else {
+            var debug = nconf.get('settings:debug');
+
+            if (typeof debug !== 'undefined' && debug !== '') {
+                console.log('debug found! it is ' + debug);
+                if (debug === 'true') {
+                    debug = 'false';
+                } else {
+                    debug = 'true';
+                }
+                console.log('i changed it to ' + debug);
+            } else {
+                console.log('debug setting not found');
+                debug = 'false';
+            }
+            nconf.set('debug', debug);
+            console.log('debug set to ' + debug);
+            nconf.save(function (err) {
+                fs.readFile('./brei-config.json', function (err, data) {
+                    console.dir(JSON.parse(data.toString()));
+                });
+                if (err) {
+                    console.log('error! ' + err.message);
+                    console.error(err.message);
+                    done();
+                    return;
+                }
+                console.log('2 Configuration saved successfully.');
+                done();
+            });
+        }
+
+    });
 
 };
