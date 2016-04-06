@@ -23,7 +23,11 @@ module.exports = function(grunt, options) {
 		},
 		assemble: {
 			files: [
-				yeoman.app + '/assemble/**/*.hbs',
+				yeoman.app + '/assemble/modules/*.hbs',
+				yeoman.app + '/assemble/partials/*.hbs',
+				yeoman.app + '/assemble/includes/*.hbs',
+				yeoman.app + '/assemble/layouts/*.hbs',
+				yeoman.app + '/assemble/*.hbs',
 				yeoman.app + '/assemble/**/*.json'
 			],
 			tasks: ['assemble', 'compass:server'],
