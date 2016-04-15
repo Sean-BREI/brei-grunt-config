@@ -69,6 +69,7 @@ module.exports = function (grunt) {
 		'concurrent:dist',
 		'copy:dist',
 		'usemin',
+		'clean:distmodernizr',
 		'modernizr:dist'
 	]);
 
