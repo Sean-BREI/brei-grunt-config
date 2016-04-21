@@ -7,6 +7,9 @@ module.exports = function(grunt, options){
 				src: ['.tmp', yeoman.dist + '/*', '!' + yeoman.dist + '/.git*']
 			}]
 		},
+		distmodernizr: {
+			src: [yeoman.dist + '/js/plugins/modernizr.optimized.js']
+		},
 		deploy: {
 			options: {
 				force: true
