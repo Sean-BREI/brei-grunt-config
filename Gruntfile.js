@@ -56,6 +56,8 @@ module.exports = function (grunt) {
 		'scsslint'
 	]);
 
+	grunt.registerTask('babelify', ['babel']);
+
 	grunt.registerTask('build', [
 		'clean:assemble',
 		'assemble',
