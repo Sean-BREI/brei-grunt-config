@@ -63,7 +63,6 @@ module.exports = function (grunt) {
 		'useminPrepare',
 		'compass:dist',
 		'autoprefixer',
-		'ngAnnotate',
 		'concat',
 		'cssmin',
 		'uglify',
