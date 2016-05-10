@@ -1,6 +1,6 @@
 module.exports = function (grunt, options) {
 	return {
-		'babel': {
+		babel: {
 			options: {
 				sourceMap: false,
 				plugins: [
@@ -26,16 +26,14 @@ module.exports = function (grunt, options) {
 					['transform-es2015-unicode-regex']
 				]
 			},
-			dist: {
-				files: [{
-					expand: true,
-					cwd: 'app/es6/',
-					ext: '.js',
-					extDot: 'last',
-					src: '**/*.js',
-					dest: 'app/js/'
-				}]
-			}
+			files: [{
+				expand: true,
+				cwd: 'app/js/es6/',
+				ext: '.js',
+				extDot: 'last',
+				src: '**/*.js',
+				dest: 'app/js/'
+			}]
 		}
 	};
 };
