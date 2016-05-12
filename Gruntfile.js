@@ -41,6 +41,7 @@ module.exports = function (grunt) {
 			return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
 		}
 		grunt.task.run([
+			'execute-sync',
 			'clean:assemble',
 			'assemble',
 			'clean:server',
