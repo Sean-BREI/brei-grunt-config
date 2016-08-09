@@ -1,7 +1,7 @@
 {
 	"name": "brei-grunt-config",
 	"version": "1.0.2",
-	"description": "BREI Abstracted Grunt Tasks",
+	"description": "BarkleyREI abstracted grunt tasks",
 	"main": "Gruntfile.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
