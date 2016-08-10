@@ -1,6 +1,6 @@
 {
 	"name": "brei-grunt-config",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "BarkleyREI abstracted grunt tasks",
 	"main": "Gruntfile.js",
 	"scripts": {
