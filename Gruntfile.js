@@ -26,7 +26,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-modernizr');
 
 	// load all grunt tasks
-	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+	require('matchdep').filterDev(['grunt-*', '!grunt-cli']).forEach(grunt.loadNpmTasks);
 
 	// Show elapsed time after tasks run
 	require('time-grunt')(grunt);
@@ -41,6 +41,7 @@ module.exports = function (grunt) {
 			return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
 		}
 		grunt.task.run([
+			'execute-sync',
 			'clean:assemble',
 			'assemble',
 			'clean:server',
