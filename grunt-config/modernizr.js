@@ -6,9 +6,13 @@ module.exports = function(grunt, options){
 			devFile: 'app/js/plugins/modernizr.js',
 			dest: 'dist/js/plugins/modernizr.optimized.js',
 			crawl: true,
+			classPrefix: 'md-',
 			tests: [],
 			excludeTests: [
-				'hidden'
+				'hidden',
+				'video',
+				'flash',
+				'svg'
 			],
 			options: [
 				'mq',
