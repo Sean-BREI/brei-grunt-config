@@ -30,7 +30,7 @@ module.exports = function(grunt, options) {
 				yeoman.app + '/assemble/*.hbs',
 				yeoman.app + '/assemble/**/*.json'
 			],
-			tasks: ['assemble', 'compass:server'],
+			tasks: ['assemble', 'compass:server', 'autoprefixer'],
 			options: {
 				debounceDelay: 500,
 				event: ['changed']
@@ -40,7 +40,7 @@ module.exports = function(grunt, options) {
 			files: [
 				yeoman.app + '/assemble/**/*.json'
 			],
-			tasks: ['assemble', 'compass:server'],
+			tasks: ['assemble', 'compass:server', 'autoprefixer'],
 			options: {
 				debounceDelay: 500,
 				event: ['added', 'deleted']

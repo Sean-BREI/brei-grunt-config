@@ -1,7 +1,8 @@
 module.exports = function(grunt, options){
 	return {
 		options: {
-			browsers: ['last 2 versions', 'ie 8', 'ie 9']
+			browsers: ['> 5% in US', 'last 2 versions', 'Firefox ESR', 'IE >= 8', 'iOS >= 8'],
+			remove: false
 		},
 		dist: {
 			files: [{
